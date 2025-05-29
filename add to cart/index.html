@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart | Baba G Perfumes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="website icon" href="E:\website\icons\Baba g perfums.png">
+  <style>
+    input[type=number] {
+      width: 60px;
+    }
+    .remove-btn {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .remove-btn:hover {
+      background-color: #c9302c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Baba G Perfumes</h1>
+      <nav>
+        <a href="E:\website\index.html">Home</a>
+        <a href="E:\website\products\index.html">Products</a>
+        <a href="E:\website\about us\index.html">About Us</a>
+        <a href="E:\website\content\index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="cart">
+    <h2>Your Shopping Cart</h2>
+    <div class="cart-container">
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Perfume</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Royal Oud</td>
+            <td class="price">2500</td>
+            <td><input type="number" class="qty" value="1" min="1"></td>
+            <td class="subtotal">2500</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Fresh Musk</td>
+            <td class="price">1800</td>
+            <td><input type="number" class="qty" value="2" min="1"></td>
+            <td class="subtotal">3600</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Amber Night</td>
+            <td class="price">3200</td>
+            <td><input type="number" class="qty" value="1" min="1"></td>
+            <td class="subtotal">3200</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+            <td>White Blossom</td>
+            <td class="price">2100</td>
+            <td><input type="number" class="qty" value="1" min="1"></td>
+            <td class="subtotal">2100</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Oriental Spice</td>
+            <td class="price">2800</td>
+            <td><input type="number" class="qty" value="1" min="1"></td>
+            <td class="subtotal">2800</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Velvet Rose</td>
+            <td class="price">2600</td>
+            <td><input type="number" class="qty" value="1" min="1"></td>
+            <td class="subtotal">2600</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cart-summary">
+        <p><strong>Total:</strong> Rs. <span id="total">0</span></p>
+        <a href="E:\website\proccd to cart\index.html" class="btn">Proceed to Checkout</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Baba G Perfumes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function updateCart() {
+      const rows = document.querySelectorAll('#cart-table tbody tr');
+      let total = 0;
+
+      rows.forEach(row => {
+        const price = parseInt(row.querySelector('.price').textContent);
+        const qty = parseInt(row.querySelector('.qty').value);
+        const subtotal = price * qty;
+        row.querySelector('.subtotal').textContent = subtotal;
+        total += subtotal;
+      });
+
+      document.getElementById('total').textContent = total;
+
+      localStorage.setItem('orderTotal', total);
+    }
+
+    function setupCart() {
+      // Update on quantity change
+      document.querySelectorAll('.qty').forEach(input => {
+        input.addEventListener('input', updateCart);
+      });
+
+      // Handle remove buttons
+      document.querySelectorAll('.remove-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const row = button.closest('tr');
+          row.remove();
+          updateCart();
+        });
+      });
+    }
+
+    // Initialize cart
+    setupCart();
+    updateCart();
+  </script>
+
+</body>
+</html>

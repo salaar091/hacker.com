@@ -1,0 +1,172 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    background-color: #333;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4081;
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Product Section */
+.products {
+    padding: 40px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-card {
+    background: #f8f8f8;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.product-card button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* About, Contact & Content Sections */
+.about, .contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.about h2, .contact h2 {
+    margin-bottom: 15px;
+}
+
+.about p, .contact p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1em;
+}
+
+.about ul {
+    list-style-type: disc;
+    margin: 20px auto;
+    padding-left: 40px;
+    text-align: left;
+    max-width: 600px;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Blockquotes for Testimonials */
+blockquote {
+    font-style: italic;
+    background: #fff;
+    padding: 15px 20px;
+    margin: 20px auto;
+    border-left: 5px solid #ff4081;
+    border-radius: 4px;
+    max-width: 600px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}

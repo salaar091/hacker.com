@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout | Baba G Perfumes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="website icon" href="E:\website\icons\Baba g perfums.png">
+  <script src="index.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Baba G Perfumes</h1>
+      <nav>
+        <a href="E:\website\index.html">Home</a>
+        <a href="E:\website\products\index.html">Products</a>
+        <a href="E:\website\about us\index.html">About Us</a>
+        <a href="E:\website\content\index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="checkout-intro">
+      <h2>Secure Checkout</h2>
+      <p>Please fill in your details to complete your purchase of the finest perfumes from Baba G Perfumes.</p>
+    </section>
+
+    <section class="checkout-form-section">
+      <form accept="https://formsubmit.co/salaarahmad487@gmail.com" id="checkoutForm" class="checkout-form" method="post">
+
+        <h3>Billing Details</h3>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required />
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" placeholder="Your shipping address" required></textarea>
+
+        <h3>Payment Method</h3>
+        <label>
+          <input type="radio" name="payment" value="Credit / Debit Card" checked />
+          Credit / Debit Card
+        </label>
+        <label>
+          <input type="radio" name="payment" value="PayPal" />
+          PayPal
+        </label>
+        <label>
+          <input type="radio" name="payment" value="Cash on Delivery" />
+          Cash on Delivery
+        </label>
+
+        <div class="order-summary">
+          <h4>Order Summary</h4>
+          <p><strong>Products Total:</strong> Rs. <span id="orderTotal">Loading...</span></p>
+        </div>
+
+        <button type="submit" class="btn">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Baba G Perfumes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    
+    // Get saved total from localStorage
+    const orderTotal = localStorage.getItem('orderTotal') || '0';
+    document.getElementById('orderTotal').textContent = orderTotal;
+
+    // Handle form submission and show selected payment method
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+      const name = document.getElementById('fullname').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value;
+
+      if (!name || !phone || !address) {
+        e.preventDefault();
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      alert(
+        "Order placed successfully!\n" +
+        "Payment Method: " + paymentMethod + "\n" +
+        "Order Total: Rs. " + orderTotal + "\n\n" +
+        "Thank you for shopping with Baba G Perfumes!"
+      );
+    });
+  </script>
+
+</body>
+</html>

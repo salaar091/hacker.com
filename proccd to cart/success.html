@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Success | Baba G Perfumes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Baba G Perfumes</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Thank You for Your Order!</h2>
+    <p>Your payment method and order details have been received.</p>
+
+    <div id="order-summary">
+      <!-- JS will populate this -->
+    </div>
+
+    <a href="E:\website\index.html" class="btn">Return to Home</a>
+  </main>
+
+  <script>
+    const orderData = JSON.parse(localStorage.getItem('orderInfo'));
+    if (orderData) {
+      document.getElementById('order-summary').innerHTML = `
+        <h3>Order Details</h3>
+        <p><strong>Name:</strong> ${orderData.name}</p>
+        <p><strong>Email:</strong> ${orderData.email}</p>
+        <p><strong>Phone:</strong> ${orderData.phone}</p>
+        <p><strong>Address:</strong> ${orderData.address}</p>
+        <p><strong>Payment Method:</strong> ${orderData.paymentMethod}</p>
+        <p><strong>Total:</strong> Rs. ${orderData.total}</p>
+      `;
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Baba G Perfumes. All rights reserved.</p>
+  </footer>
+
+  
+</body>
+</html>

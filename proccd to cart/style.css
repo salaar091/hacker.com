@@ -1,0 +1,138 @@
+/* Container for consistent width */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Header style */
+header {
+  background-color: #000;
+  color: white;
+  padding: 25px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+header nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Checkout Page */
+
+.checkout-intro {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.checkout-intro h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.checkout-intro p {
+  font-size: 1.2em;
+  color: #444;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Checkout form section */
+.checkout-form-section {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto 80px auto;
+  text-align: left;
+}
+
+.checkout-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #222;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="tel"],
+.checkout-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.checkout-form input[type="radio"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.checkout-form label > input[type="radio"] {
+  margin-right: 10px;
+}
+
+.checkout-form button.btn {
+  background-color: #000;
+  color: white;
+  padding: 16px 35px;
+  font-size: 1.1em;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+.checkout-form button.btn:hover {
+  background-color: #444;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  font-weight: 600;
+  font-size: 1em;
+}
